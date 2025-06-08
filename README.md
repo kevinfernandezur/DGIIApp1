@@ -90,9 +90,9 @@ Vista previa de la aplicación
 
 Listado de contribuyentes
 
-![Listado de contribuyentes](readme-assets/listado-contribuyentes.png)
+![Listado de contribuyentes](readme-assets/listado-contribuyentes.png.jpg)
 
 Comprobantes por contribuyente
 
-![Comprobantes por contribuyente](readme-assets/comprobantes-itbis.png)
+![Comprobantes por contribuyente](readme-assets/comprobantes-itbis.png.jpg)
 
