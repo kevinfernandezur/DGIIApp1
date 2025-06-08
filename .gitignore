@@ -1,0 +1,7 @@
+bin/
+obj/
+*.user
+*.db-shm
+*.db-wal
+.vscode/
+node_modules/

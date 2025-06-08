@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kevin\\OneDrive\\Escritorio\\angularyasp\\DGIIApp.Tests\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29CFE3F7-A048-4515-9D5F-4A79CC8E4E9F}|DGIIApp.Tests\\DGIIApp.Tests.csproj|c:\\users\\kevin\\onedrive\\escritorio\\angularyasp\\dgiiapp.tests\\dgiiapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29CFE3F7-A048-4515-9D5F-4A79CC8E4E9F}|DGIIApp.Tests\\DGIIApp.Tests.csproj|solutionrelative:dgiiapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Escritorio\\angularyasp\\DGIIApp.Tests\\DGIIApp.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "DGIIApp.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Escritorio\\angularyasp\\DGIIApp.Tests\\DGIIApp.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "DGIIApp.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T21:30:01.483Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

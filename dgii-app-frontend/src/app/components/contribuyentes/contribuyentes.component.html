@@ -1,0 +1,183 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nosifer&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playwrite+HU:wght@100..400&family=Satisfy&family=Staatliches&display=swap" rel="stylesheet">
+
+<div class="container mt-5">
+  <div class="d-flex align-items-center justify-content-center mb-4 header-dgii">
+  <img src="assets/img/logo.jpg"  alt="DGII Logo" class="me-3 logo-dgii" />
+  <h2 class="m-0 text-primary fw-bold" style="color: #12822cbf !important; ">Listado de Contribuyentes</h2>
+</div>
+
+
+  <div class="mb-4 d-flex justify-content-center">
+    <input
+      type="text"
+      class="form-control form-control-lg stylish-input w-50"
+      placeholder="🔍 Buscar por RNC / Cédula"
+      [(ngModel)]="filtroRnc"
+    />
+  </div>
+
+  <div class="card shadow-lg rounded-4 border-0 mx-auto" style="max-width: 1100px;">
+    <div class="card-body p-0">
+      <table class="table table-hover table-borderless mb-0 text-center align-middle">
+        <thead class="table-light">
+          <tr>
+            <th style="width: 180px;">RNC / Cédula</th>
+            <th>Nombre</th>
+            <th style="width: 180px;">Tipo</th>
+            <th style="width: 100px;">Estatus</th>
+            <th style="width: 170px;">Acción</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <ng-container *ngFor="let c of contribuyentesFiltrados">
+            <tr>
+              <td>{{ c.rncCedula }}</td>
+              <td>{{ c.nombre }}</td>
+              <td style="width: auto;">{{ c.tipo }}</td>
+              <td>
+                <span
+                  [ngClass]="{
+                    'badge rounded-pill status-activo': c.estatus === 'ACTIVO',
+                    'badge rounded-pill status-inactivo': c.estatus === 'INACTIVO'
+                  }"
+                >
+                  {{ c.estatus }}
+                </span>
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-dark btn-ver-comprobante"
+                  (click)="verComprobantes(c)"
+                >
+                  <i class="bi bi-file-earmark-text me-1"></i> Ver comprobantes
+                </button>
+              </td>
+            </tr>
+
+            <tr *ngIf="selectedContribuyente?.rncCedula === c.rncCedula">
+              <td colspan="5">
+                <div class="card mt-3 border-0 shadow-sm rounded-4">
+                  <div class="card-header stylish-header text-white text-start">
+                    Comprobantes de {{ selectedContribuyente?.nombre }}
+                    (RNC: {{ selectedContribuyente?.rncCedula }})
+                  </div>
+                  <div class="card-body">
+                    <p class="mb-3 fw-semibold" style="font-size: 20px;">
+                      Total ITBIS: ${{ totalItbis.toFixed(2) }}
+                    </p>
+
+                    <ul class="list-group rounded-3">
+                      <li
+                        *ngFor="let comp of comprobantes"
+                        class="list-group-item d-flex justify-content-between align-items-center"
+                      >
+                        <div style="font-size: 16px">
+                          <strong>NCF:</strong>  {{ comp.ncf }}<br />
+                          <small>Monto: ${{ comp.monto.toFixed(2) }}</small>
+                        </div>
+                        <span class="badge bg-success rounded-pill ibt" style="font-size: 15px;   background-color: #0e834cac !important;">
+                          ITBIS: ${{ comp.itbis18.toFixed(2) }}
+                        </span>
+                      </li>
+                    </ul>
+
+                    <div
+                      *ngIf="comprobantes.length === 0"
+                      class="alert alert-warning mt-3 mb-0"
+                    >
+                      Este contribuyente no tiene comprobantes registrados.
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+
+<style>
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.stylish-input {
+  border-radius: 30px;
+  padding-left: 20px;
+}
+
+.tipo-nowrap {
+  white-space: nowrap;
+}
+
+
+.stylish-header {
+  background: linear-gradient(90deg, #15437b);
+  font-weight: bold;
+}
+
+.status-activo {
+  background-color: #0e834ccf !important;
+  border-radius: 50px !important;
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  min-width: 70px;
+}
+
+.status-inactivo {
+  border-radius: 50px !important;
+  background-color: #324352;
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  min-width: 70px;
+}
+
+.header-dgii {
+  border-bottom: 3px solid #1f7d0a71;
+  padding-bottom: 10px;
+   font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.logo-dgii {
+  height: 100px;
+  width: auto;
+}
+
+
+.btn-ver-comprobante {
+  font-size: 0.85rem;
+  width: 140px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.itb{
+  background-color: aquamarine !important;
+}
+
+
+</style>
