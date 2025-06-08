@@ -1,60 +1,98 @@
-# DGIIApp - Prueba Técnica Programador
 
-# Descripción General
+DGIIApp - Prueba Técnica Programador
+
+Descripción General
 
 El sistema permite a los directivos consultar:
+
 - El listado de todos los contribuyentes registrados (personas físicas o jurídicas).
 - Los comprobantes fiscales asociados a cada contribuyente.
 - El total del ITBIS acumulado por contribuyente.
-- Clasificación automática de contribuyentes como `ACTIIVO` o `INACTIVO` según si poseen comprobantes.
-
+- Clasificación automática de contribuyentes como ACTIVO o INACTIVO según si poseen comprobantes.
 
 
 # Tecnologías utilizadas
 
 # Backend (.NET Core)
 - ASP.NET Core 7
-- Entity Framework Core (InMemory para pruebas)
+- Entity Framework Core con SQLite (persistencia real)
 - Arquitectura por capas (Controllers, Services, Data, Models)
 - Middleware para manejo global de excepciones
 - Logging estructurado
+- Inyección de dependencias
+- Tests unitarios con xUnit + EF InMemory
 
 # Frontend (Angular)
 - Angular CLI 16+
 - Bootstrap 5
-- Componentes con filtros, botones y diseño moderno
+- Componentes organizados por módulo
+- Filtro de búsqueda y botones con estilo profesional
 
 ---
 
 # Requisitos cumplidos
 
-✔ Utiliza .NET Core y Angular  
-✔ Implementación de capas separadas (responsabilidades bien definidas)  
-✔ Middleware global para manejo de errores y logs  
-✔ Aplicación de principios SOLID
-✔ Inyección de dependencias
-✔ Tests unitarios (xUnit + EF InMemory)  
-✔ Persistencia de datos (opcional, con InMemory en pruebas)
+- ✔ Utiliza .NET Core y Angular
+- ✔ Separación de responsabilidades en distintas capas
+- ✔ Middleware global de manejo de errores y logging
+- ✔ Principios SOLID aplicados
+- ✔ Inyección de dependencias
+- ✔ Tests unitarios funcionales
+- ✔ Base de datos `dgii.db` incluida (sin necesidad de crearla manualmente)
+
+
+# Tests Unitarios (xUnit)
+
+Se implementaron pruebas para:
+
+**ContribuyenteService**
+- `GetAllAsync()`
+
+**ComprobanteService**
+- `GetAllAsync()`
+- `GetTotalItbisByRncAsync()`
+
+Todos los tests fueron ejecutados correctamente.
 
 ---
 
-# Tests Unitarios
+Instrucciones para clonar y ejecutar
+Clonar el repositorio
 
-Se implementaron pruebas para los servicios principales:
-
-- `ContribuyenteService`
-  - `GetAllAsync` 
-- `ComprobanteService`
-  - `GetAllAsync` 
-  - `GetTotalItbisByRncAsync` 
-
-Todos los tests están **implementados y pasan correctamente**.
-
-
-
-Instrucciones de uso
-
-1. Clonar el repositorio
 ```bash
-git clone https://github.com/tuusuario/DGIIApp.git
-cd DGIIApp
+git clone https://github.com/kevinfernandezur/DGIIApp1.git
+cd DGIIApp1
+```
+
+---
+
+Ejecutar el Backend (.NET Core)
+Abre Visual Studio 2022:
+
+1. Abre la carpeta `DGIIApp/`
+2. Asegúrate que esté seleccionado el proyecto `DGIIApp.csproj`
+3. Presiona `Ctrl + F5` para ejecutar sin depuración
+4. Swagger se abrirá en el navegador (`https://localhost:xxxx/swagger`)
+5. La base de datos `dgii.db` ya está incluida y lista para usar
+
+Ejecutar el Frontend (Angular)
+```bash
+cd dgii-app-frontend
+npm install
+ng serve
+```
+
+Abre el navegador en: [http://localhost:4200](http://localhost:4200)
+
+---
+
+Vista previa de la aplicación
+
+Listado de contribuyentes
+
+![Listado de contribuyentes](readme-assets/listado-contribuyentes.png)
+
+Comprobantes por contribuyente
+
+![Comprobantes por contribuyente](readme-assets/comprobantes-itbis.png)
+
