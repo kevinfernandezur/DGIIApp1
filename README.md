@@ -10,6 +10,15 @@ El sistema permite a los directivos consultar:
 - El total del ITBIS acumulado por contribuyente.
 - Clasificación automática de contribuyentes como ACTIVO o INACTIVO según si poseen comprobantes.
 
+Vista previa de la aplicación
+
+Listado de contribuyentes
+
+![Listado de contribuyentes](readme-assets/listado-contribuyentes.png.jpeg)
+
+Comprobantes por contribuyente
+
+![Comprobantes por contribuyente](readme-assets/comprobantes-itbis.png.jpeg)
 
 # Tecnologías utilizadas
 
@@ -86,13 +95,5 @@ Abre el navegador en: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-Vista previa de la aplicación
 
-Listado de contribuyentes
-
-![Listado de contribuyentes](readme-assets/listado-contribuyentes.png.jpeg)
-
-Comprobantes por contribuyente
-
-![Comprobantes por contribuyente](readme-assets/comprobantes-itbis.png.jpeg)
 
