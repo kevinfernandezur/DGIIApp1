@@ -88,7 +88,7 @@ Ejecutar el Frontend (Angular)
 ```bash
 cd dgii-app-frontend
 npm install
-ng serve
+npx ng serve --port 54420
 ```
 
 Abre el navegador en: [http://localhost:4200](http://localhost:4200)
