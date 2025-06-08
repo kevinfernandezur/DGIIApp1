@@ -91,7 +91,7 @@ npm install
 npx ng serve --port 54420
 ```
 
-Abre el navegador en: [http://localhost:4200](http://localhost:4200)
+Abre el navegador en: [http://localhost:4200](http://localhost:54420)
 
 ---
 
